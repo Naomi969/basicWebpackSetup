@@ -3,7 +3,8 @@ const nodeExternals = require('webpack-node-externals')
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-    plugins: [new StylelintPlugin(['node_modules'])],
+   
+    // plugins: [new StylelintPlugin(['node_modules'])],
     // externalsPresets: { node: true },
     // externals: [nodeExternals()],
     output: {
@@ -18,10 +19,10 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
-                }
+                },
+                exclude: /node_modules/,
             },
             {
                 test: /\.scss$/,
